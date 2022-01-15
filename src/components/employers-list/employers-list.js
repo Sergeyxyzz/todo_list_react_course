@@ -4,8 +4,9 @@ import EmployersListItem from '../employers-list-item/employers-list-item';
 const EmployersList = ({data}) => {
 
     const elements = data.map(it => {
+        const {id, ...itProps} = it;
         return (
-            <EmployersListItem {...it} />
+            <EmployersListItem key={id} {...itProps} />
         )
     })
 
